@@ -17,9 +17,9 @@ export async function POST(request: NextRequest) {
   const client = createClient();
   const job = await client.getByUID("job_offer", jobUid);
 
-  const recipients = (job.data.admin_emails ?? [])
-    .map((entry: { email: string }) => entry.email)
-    .filter(Boolean);
+const recipients = (job.data.admin_emails ?? [])
+  .map((entry) => entry.email)
+  .filter((email): email is string => !!email);
 
   if (recipients.length === 0) {
     return NextResponse.json(
