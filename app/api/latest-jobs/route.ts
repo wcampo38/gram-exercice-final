@@ -20,8 +20,8 @@ export async function GET() {
     contract_type: job.data.contract_type,
     publication_date: job.data.publication_date,
     technologies: (job.data.technologies ?? [])
-      .map((t: { technology_name: string }) => t.technology_name)
-      .filter(Boolean),
+    .map((t) => t.technology_name)
+    .filter((name): name is string => !!name),
     url: `/offres/${job.uid}`,
   }));
 
