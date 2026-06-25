@@ -52,6 +52,10 @@ export default async function ListePage({ searchParams }: Props) {
       </h1>
       <div className="border-b-2 border-blue-500 w-48 mb-8" />
 
+      <p className="text-gray-700 mb-8">
+        Nombre d'offres : {filtered.length} | Page : {currentPage}
+      </p>
+
       <Suspense>
         <TagCloud tags={tags} />
       </Suspense>
