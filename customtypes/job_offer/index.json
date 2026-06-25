@@ -47,7 +47,7 @@
         "config": {
           "label": "Contract Type",
           "placeholder": "",
-          "options": ["1", "2"]
+          "options": ["CDI", "Alternant"]
         }
       },
       "publication_date": {

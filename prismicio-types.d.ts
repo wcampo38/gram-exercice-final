@@ -158,7 +158,7 @@ interface JobOfferDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  contract_type: prismic.SelectField<"1" | "2">;
+  contract_type: prismic.SelectField<"CDI" | "Alternant">;
 
   /**
    * Publication Date field in *Job Offer*
