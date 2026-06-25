@@ -2,6 +2,7 @@ import { createClient } from "@/prismicio";
 import JobCard from "@/components/JobCard";
 import TagCloud from "@/components/TagCloud";
 import { Suspense } from "react";
+import Image from "@/components/ui/Image";
 
 type Props = {
   searchParams: Promise<{ tech?: string }>;
@@ -39,6 +40,8 @@ export default async function HomePage({ searchParams }: Props) {
 
   return (
     <main className="max-w-6xl mx-auto px-8 py-12">
+      <Image />
+
       <h1 className="text-3xl font-bold text-[#1b2a4a] mb-1">
         Offres d&apos;emploi
       </h1>
