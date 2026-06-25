@@ -3,6 +3,7 @@ import { PrismicRichText } from "@prismicio/react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Calendar, MapPin, FileText, Code2 } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 type Props = {
   params: Promise<{ uid: string }>;
@@ -68,6 +69,11 @@ export default async function JobOfferPage({ params }: Props) {
       {/* Description */}
       <div className="prose prose-blue max-w-none text-gray-700">
         <PrismicRichText field={job.data.description} />
+      </div>
+
+      {/* Formulaire de candidature */}
+      <div className="mt-12 border border-gray-200 rounded p-6">
+        <ContactForm jobUid={uid} jobTitle={job.data.title ?? ""} />
       </div>
     </main>
   );
