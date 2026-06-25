@@ -1,5 +1,6 @@
 import { createClient } from "@/prismicio";
 import Link from "next/link";
+import { Bookmark, Calendar, Code2 } from "lucide-react";
 
 export default async function HomePage() {
   const client = createClient();
@@ -27,28 +28,34 @@ export default async function HomePage() {
               href={`/offres/${job.uid}`}
               className="block border border-gray-200 rounded p-4 hover:shadow-md transition"
             >
+              {/* Header carte */}
               <div className="flex items-start justify-between mb-2">
                 <h2 className="font-semibold text-[#1b2a4a] text-sm">
                   {job.data.title}
                 </h2>
-                <span className="text-gray-300 text-lg">🔖</span>
+                <Bookmark className="w-4 h-4 text-gray-300 shrink-0" />
               </div>
 
-              <p className="text-blue-500 text-xs mb-1">
-                📅 {job.data.publication_date}
-              </p>
+              {/* Date */}
+              <div className="flex items-center gap-1 text-blue-500 text-xs mb-2">
+                <Calendar className="w-3 h-3" />
+                <span>{job.data.publication_date}</span>
+              </div>
 
+              {/* Technologies */}
               <div className="flex flex-wrap gap-1 mb-3">
                 {techs.map((t, i) => (
                   <span
                     key={i}
-                    className="text-xs text-blue-500 border border-blue-200 rounded px-1"
+                    className="flex items-center gap-1 text-xs text-blue-500 border border-blue-200 rounded px-1.5 py-0.5"
                   >
+                    <Code2 className="w-3 h-3" />
                     {t.technology_name}
                   </span>
                 ))}
               </div>
 
+              {/* Résumé */}
               <p className="text-gray-500 text-xs line-clamp-3">
                 {job.data.summary}
               </p>
@@ -57,6 +64,7 @@ export default async function HomePage() {
         })}
       </div>
 
+      {/* Bouton */}
       <div className="flex justify-center mt-10">
         <button className="bg-blue-600 text-white px-6 py-2 rounded text-sm hover:bg-blue-700 transition">
           Voir toutes les offres
