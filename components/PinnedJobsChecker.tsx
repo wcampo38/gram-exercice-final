@@ -12,7 +12,7 @@ export default async function PinnedJobsChecker() {
   return (
     <div className="bg-yellow-50 border-b border-yellow-200 px-8 py-3">
       <p className="text-yellow-800 text-sm">
-        📌 Offres épinglées disponibles :{" "}
+        Offres épinglées disponibles :{" "}
         {pinnedJobs.map((job) => job.data.title).join(", ")}
       </p>
     </div>
