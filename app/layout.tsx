@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import PinnedJobsChecker from "@/components/PinnedJobsChecker";
+import Link from "next/link";
+
 
 const geist = Geist({
   subsets: ["latin"],
@@ -22,7 +24,7 @@ export default function RootLayout({
     <html lang="fr" className={geist.variable}>
       <body className="min-h-screen bg-white font-[var(--font-geist)]">
         <nav className="bg-[#1b2a4a] text-white px-8 py-4 flex items-center justify-between">
-          <span className="font-bold text-lg tracking-wide">⬡ DEV</span>
+        <Link href="/" className="font-bold text-lg tracking-wide">⬡ DEV</Link>
         </nav>
 
         <PinnedJobsChecker />
