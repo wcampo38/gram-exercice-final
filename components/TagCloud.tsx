@@ -18,9 +18,9 @@ export default function TagCloud({ tags }: Props) {
 
   function handleClick(name: string) {
     if (activeTech === name) {
-      router.push("/");
+      router.push("/liste");
     } else {
-      router.push(`/?tech=${encodeURIComponent(name)}`);
+          router.push(`/liste?tech=${encodeURIComponent(name)}`);
     }
   }
 
