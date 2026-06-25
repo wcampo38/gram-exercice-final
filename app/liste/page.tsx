@@ -40,7 +40,6 @@ export default async function ListePage({ searchParams }: Props) {
       );
 
   // Pagination
-  const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const jobs = filtered.slice(
     (currentPage - 1) * PAGE_SIZE,
     currentPage * PAGE_SIZE
